@@ -73,7 +73,7 @@ public class ProcessResultFiles {
                             )
                             .min(Comparator.comparingInt(LineProcessedFile::getLine))
                             .ifPresent(fp -> {
-                                //Ignoramos os casos onde o arquivo estava limpo, pois nao temos como calcular
+                                //Ignoramos os casos onde o total de linhas estava zero, pois nao temos como calcular
                                 //o percentual de alteracao, esforço e accuray, recall e etc
                                 if (svnLineFile.getTotalLines() != 0) {
                                     result.add(buildOutputLineResult(svnLineFile, fp));
